@@ -1,0 +1,56 @@
+<section class="cart-section">
+  <h2 class="cart-title">Resumen del Carrito</h2>
+
+  <div *ngIf="(cartItems$ | async) as items">
+    <p *ngIf="items.length === 0" class="empty-msg">
+      El carrito está vacío. Agrega productos desde el catálogo.
+    </p>
+
+    <div *ngIf="items.length > 0" class="cart-table-wrapper">
+      <table class="cart-table">
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Precio Un.</th>
+            <th>Cantidad</th>
+            <th>Subtotal</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of items">
+            <td>{{ item.producto.nombre }}</td>
+            <td>{{ item.producto.precio | currency:'Q' }}</td>
+            <td>
+              <input 
+                type="number" 
+                min="1" 
+                class="qty-input"
+                [value]="item.cantidad" 
+                (change)="cambiarCantidad(item.producto.id, $event)"
+              />
+            </td>
+            <td class="subtotal-text">
+              {{ item.producto.precio | subtotal:item.cantidad | currency:'Q' }}
+            </td>
+            <td>
+              <button class="btn-delete" (click)="eliminar(item.producto.id)">
+                Eliminar
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <footer class="cart-footer">
+        <div class="total-box">
+          <h3>Total General</h3>
+          <span class="total-amount">{{ items | cartTotal | currency:'Q' }}</span>
+        </div>
+        <button class="btn-clear" (click)="vaciar()">
+          Vaciar Carrito
+        </button>
+      </footer>
+    </div>
+  </div>
+</section>

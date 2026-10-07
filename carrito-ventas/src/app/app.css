@@ -1,0 +1,40 @@
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header-banner {
+  background: linear-gradient(135deg, var(--rb-navy) 0%, var(--rb-dark) 100%);
+  border-left: 6px solid var(--rb-red);
+  border-bottom: 3px solid var(--rb-yellow);
+  padding: 25px 30px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.header-banner h1 {
+  color: var(--rb-text);
+  font-size: 2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.header-banner h1 span {
+  color: var(--rb-yellow);
+}
+
+.header-banner p {
+  color: var(--rb-muted);
+  margin-top: 5px;
+  font-size: 0.95rem;
+}
+
+.divider {
+  border: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--rb-red), var(--rb-yellow), transparent);
+  margin: 40px 0;
+}

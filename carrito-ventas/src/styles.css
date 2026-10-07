@@ -1,0 +1,25 @@
+:root {
+  --rb-dark: #0a0f1d;
+  --rb-navy: #141c2e;
+  --rb-navy-light: #1f2a44;
+  --rb-red: #e10600;
+  --rb-red-hover: #b80500;
+  --rb-yellow: #ffcc00;
+  --rb-text: #f3f4f6;
+  --rb-muted: #8a99ad;
+  --rb-border: #2a3855;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: var(--rb-dark);
+  color: var(--rb-text);
+  min-height: 100vh;
+  padding: 20px;
+}
